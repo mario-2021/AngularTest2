@@ -13,6 +13,16 @@ import { Component } from '@angular/core';
     <br />
     <input #box (keyup)="onKey(box.value)">
     <p>{{values}}</p>
+    <img [src]="imgUrl" />
+    <br>
+    <img bind-src="imgUrl" />
+    <br>
+    <img src="{{ imgUrl }}" />
+    <p [class.blue]="values">Loreem</p>
+    <p [class]="{ b: values, y: !values }">Loreem2</p>
+    <p [ngClass]="{ b: values, y: !values }">Loreem2</p>
+    <p [style.color]="myColor">Loreem3</p>
+    <p [style.color]="values ? 'blue' : 'green'">Loreem3</p>
     `
 })
 
@@ -20,6 +30,8 @@ export class AppComponent {
   values: string = '';
   name: string = 'MeroSH';
   someColor = 'color:#f00';
+  imgUrl: string = 'https://via.placeholder.com/150';
+  myColor: string = 'red';
   getAge() {
     return 33;
   }
