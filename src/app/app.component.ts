@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +23,8 @@ import { Component } from '@angular/core';
     <p [ngClass]="{ b: values, y: !values }">Loreem2</p>
     <p [style.color]="myColor">Loreem3</p>
     <p [style.color]="values ? 'blue' : 'green'">Loreem3</p>
+    <input [(ngModel)]="values" />
+    <p> {{ values }} </p>
     `
 })
 
