@@ -1,8 +1,12 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, ElementRef, NgModule, ViewChild } from '@angular/core';
 
+interface student {
+  id: number,
+  name: string
+}
 @Component({
   selector: 'app-root',
-  // templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
   template: `<p [style]='someColor'>
     Hello World!
     from {{ name }}
@@ -25,24 +29,74 @@ import { Component, NgModule } from '@angular/core';
     <p [style.color]="values ? 'blue' : 'green'">Loreem3</p>
     <input [(ngModel)]="values" />
     <p> {{ values }} </p>
+    <p *ngIf="!isActive">Hello World</p>
+    <p *ngIf="!values">Hello World</p>
+    <p [hidden]="!values">Hello World</p>
     `
 })
 
 export class AppComponent {
+
   values: string = '';
+
   name: string = 'MeroSH';
+
   someColor = 'color:#f00';
+
   imgUrl: string = 'https://via.placeholder.com/150';
+
   myColor: string = 'red';
+
+  isActive: boolean = false;
+
+  students: Array<student>;
+
+  colors: Array<string>;
+
+  selectedColor = '';
+
   getAge() {
     return 33;
   }
+
   doSomething() {
     console.log('something');
   }
+
   onKey(value: string) {
     this.values = value;
   }
+
+  constructor() {
+    this.students = [
+      { id: 1, name: 'X' },
+      { id: 2, name: 'Y' },
+      { id: 3, name: 'Z' }
+    ];
+
+    this.colors = [
+      'red',
+      'blue',
+      'green'
+    ];
+
+  }
+
+  refresh() {
+
+    this.students = [
+      { id: 1, name: 'X' },
+      { id: 2, name: 'Y' },
+      { id: 3, name: 'Z' },
+      { id: 4, name: 'M' }
+    ];
+
+  }
+
+  track(index: number, student: student) {
+    return student.id
+  };
+
 }
 
 // import { Component } from '@angular/core';

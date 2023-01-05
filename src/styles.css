@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 15px;
+}
+
+div {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+ul li {
+  list-style: none;
+}
+
+input {
+  margin: 5px;
+}
+
+button{
+  margin: 10px;
+}

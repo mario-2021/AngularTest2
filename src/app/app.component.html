@@ -1,1 +1,28 @@
-<p>Hello World</p>
+<p>Hello World from Com.HTML</p>
+
+<ul>
+  <li *ngFor="let student of students;
+  let i = index;
+  trackBy:track">
+    {{ student.id }} - {{ student.name }} - {{i}}
+  </li>
+</ul>
+
+<button (click)="refresh()">Refresh</button>
+
+<div *ngFor="let color of colors;
+let i = index">
+  <label for="color_{{ i }}">{{ color }}</label>
+  <input type="radio" id="color_{{ i }}" [value]="color" [(ngModel)]="selectedColor" />
+</div>
+
+<div [ngSwitch]="selectedColor">
+
+  <p *ngSwitchCase="'red'">You Have Chosen Red Color</p>
+  <p *ngSwitchCase="'blue'">You Have Chosen Blue Color</p>
+  <p *ngSwitchCase="'green'">You Have Chosen Green Color</p>
+  <p *ngSwitchDefault>You didn't Chose any Color</p>
+
+</div>
+
+<input type="text" #phone />
