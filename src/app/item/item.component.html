@@ -1,4 +1,11 @@
 <p>item works!</p>
 
 <input type="text" (keyup)="onKey($event)" />
-<app-item-details [itemTitle]="itemTitleInParent"></app-item-details>
+<br>
+<input type="text" (keyup)="titleOnKey($event)" [value]="title" />
+<app-item-details [itemTitle]="itemTitleInParent" (eventFromChild)="dataFromChild = $event" [(title)]="title">
+</app-item-details>
+
+data from child is {{ dataFromChild }}
+<br>
+New Data From Child {{ title }}
