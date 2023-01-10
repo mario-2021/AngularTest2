@@ -103,6 +103,14 @@ export class AppComponent {
     return student.id
   };
 
+  log(event: KeyboardEvent) {
+    console.log(event);
+  };
+
+  value = '';
+  onEnter(value: string) { this.value = value; }
+
+
 }
 
 // import { Component } from '@angular/core';
