@@ -20,6 +20,12 @@ export class ItemComponent {
 
   dataFromChild: string = '';
 
-  constructor() { }
+  myTitle = 'title 1';
+
+  constructor() {
+    setTimeout(() => {
+      this.myTitle = '';
+    }, 3000);
+  }
 
 }

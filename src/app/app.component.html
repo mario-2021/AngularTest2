@@ -27,13 +27,14 @@ let i = index">
 
 <input type="text" #phone /> -->
 
-<!-- <app-item></app-item> -->
+<app-item></app-item>
 
 <app-svg></app-svg>
 
-<input type="text" #ref (keyup)="(0)" /> {{ ref.value }}
+<br>
+<input type="text" #ref (keyup)="(0)" /> {{ ref.value }} <br>
 
-<input type="text" (keyup)="log($event)" />
+<input type="text" (keyup)="log($event)" /> <br>
 
-<input #box (keyup.enter)="onEnter(box.value)">
-<p>{{value}}</p>
+<input #box (keyup.enter)="onEnter(box.value)"> <br>
+<p>{{value}}</p> <br>
